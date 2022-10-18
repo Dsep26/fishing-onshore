@@ -1,2 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--Hey! This is the original version
+of Simple CSS Waves-->
+
+<div class="header" >
+
+  <!--Content before waves-->
+  <div class="inner-header flex">
+    <!--Just the logo.. Don't mind this-->
+    <h1>Fishing OnShore</h1>
+    
+  </div>
+
+  <%=image_tag("Fishing onshore 2.png", size: "850x700", class: "img_logo")%>
+
+  <div class="inner-header-h2 flex">
+    <!--Just the logo.. Don't mind this-->
+    <h2>Get Your Fishing Spot</h2>
+    
+  </div>
+  <!--Waves Container-->
+  <div class="wavy">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="10 24 150 25" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="70" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+    </svg>
+  </div>
+  <!--Waves end-->
+
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+<div class="content flex">
+  <p>Danveer | 2022 | Free to use</p>
+</div>
+<!--Content ends-->
