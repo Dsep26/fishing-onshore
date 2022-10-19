@@ -2,6 +2,18 @@
 <div class="container">
   <h1>FishingSpots#index</h1>
   <p>Find me in app/views/fishing_spots/index.html.erb</p>
+  
+   <div class="search">
+    <%= form_with url: fishing_spots_path, method: :get, class: "d-flex search-field" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find Your Location"
+      %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
 
   <div class="card-container">
     <div class="row">
@@ -46,7 +58,7 @@
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
-        </div>   
+        </div>
     </div>
   </div>
 
