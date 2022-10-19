@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+.card-container{
+  position: relative;
+  padding: 20px;
+}
+
+.card-block{
+  position: relative;
+  padding: 20px;
+  margin: 6px;
+}
+
+.container{
+  position: relative;
+  background: #74EBD5;
+  background: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+p{
+font-weight: bold;
+}
+
+.card-title{
+  font-family: 'Philosopher', sans-serif;
+  text-align: center;
+}
+
+.card-text{
+  font-style: italic;
+  font-weight: bold;
+}
+.col-sm-6{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
