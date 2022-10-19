@@ -3,6 +3,12 @@ class FishingSpotsController < ApplicationController
 
   def index
     @spots = FishingSpot.all
+    @markers = @spots.geocoded.map do |flat|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude
+      }
+    end
   end
 
   def show
