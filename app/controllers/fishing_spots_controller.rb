@@ -3,13 +3,9 @@ class FishingSpotsController < ApplicationController
 
   def index
     @fishingspots = FishingSpot.all
-    @markers = @fishingspots.geocoded.map do |fishingspot|
-      {
-        lat: fishingspot.latitude,
-        lng: fishingspot.longitude
-      }
-    end 
+    
   end
+
   def new
     @fishingspots = FishingSpot.new(fish_params)
     @fishingspot = FishingSpot.save(set_spot)
@@ -17,6 +13,12 @@ class FishingSpotsController < ApplicationController
   end  
 
   def show
+    @fishingspots = FishingSpot.geocoded
+    @marker = [{ 
+      lat: @fishingspot.latitude,
+      lng: @fishingspot.longitude,
+      image_url: helpers.asset_url("logo.png")
+    }]
   end
 
   private
@@ -25,7 +27,6 @@ class FishingSpotsController < ApplicationController
     @fishingspot = FishingSpot.find(params[:id])
   end
   def fish_params
-    params.require(:fishingspots).permit(:adresse, :fishing_activity, :longitude, :latitude)
+    params.require(:fishingspots).permit(:address, :fishing_activity, :longitude, :latitude)
   end
 end
-
