@@ -6,7 +6,6 @@ class FishingSpotsController < ApplicationController
   end
 
   def show
-    set_spot
   end
 
   private
