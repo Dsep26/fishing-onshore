@@ -126,3 +126,17 @@ h2{
 .wavy{
     height: 165px;
 }
+@media (max-width: 800px) {
+  .waves {
+    height:78px;
+    min-height:225px;
+    padding-top: 85px;
+  }
+  .content{
+    height: 17vh;
+  }
+  h1 {
+    font-size:36px;
+    font-weight: 1000;
+  }
+}
