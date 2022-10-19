@@ -22,6 +22,5 @@ class FishingSpot < ApplicationRecord
   validates :latitude, presence: true
   validates :longitude, presence: true
   # validates_with GoodnessValidator
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  
 end
