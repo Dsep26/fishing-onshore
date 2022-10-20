@@ -4,12 +4,14 @@
 .card-container{
   position: relative;
   padding: 20px;
+
 }
 
 .card-block{
   position: relative;
   padding: 20px;
   margin: 6px;
+  height: 80vh;
 }
 
 .container{
@@ -36,6 +38,7 @@ font-weight: bold;
   font-style: italic;
   font-weight: bold;
 }
+
 .col-sm-6{
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
