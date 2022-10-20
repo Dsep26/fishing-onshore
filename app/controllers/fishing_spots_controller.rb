@@ -3,14 +3,14 @@ class FishingSpotsController < ApplicationController
 
   def index
     @fishingspots = FishingSpot.all
-    
+
   end
 
   def new
     @fishingspots = FishingSpot.new(fish_params)
     @fishingspot = FishingSpot.save(set_spot)
 
-  end  
+  end
 
   def show
     @fishingspots = FishingSpot.geocoded
@@ -27,6 +27,7 @@ class FishingSpotsController < ApplicationController
   def set_spot
     @fishingspot = FishingSpot.find(params[:id])
   end
+  
   def fish_params
     params.require(:fishingspots).permit(:address, :fishing_activity, :longitude, :latitude)
   end
