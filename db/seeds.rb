@@ -39,9 +39,9 @@ FishingSpot.create(address: "Trou d'Eau Douce", fishing_activity: fishing_activi
 FishingSpot.create(address: "Grand Sable", fishing_activity: fishing_activity.sample,
                   latitude: -20.327788830986474, longitude: 57.77126356354492)
 FishingSpot.create(address: "Pavillon Du Grand Port", fishing_activity: fishing_activity.sample,
-                  latitude: -20.37508446254399, longitude: 57.721461942216195),
-# FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
-#                   latitude: , longitude: )
+                  latitude: -20.37508446254399, longitude: 57.721461942216195)
+FishingSpot.create(address: "Mahebourg", fishing_activity: fishing_activity.sample,
+                  latitude: -20.401561000225215, longitude: 57.703576880806864)
 # FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
 #                   latitude: , longitude: )
 # FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
@@ -50,3 +50,5 @@ FishingSpot.create(address: "Pavillon Du Grand Port", fishing_activity: fishing_
 #                   latitude: , longitude: )
 
 # FishingSpot.create(address: "16 villa Gaudelet, Paris", fishing_activity: 5,latitude: 48.8648601,  longitude: 2.3798866)
+
+puts "Seeding done !"
