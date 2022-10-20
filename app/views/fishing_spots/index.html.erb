@@ -15,17 +15,17 @@
   </div>
 
   <div class="card-container">
-    <div class="row">
     <% @fishingspots.each do |fishing_spot| %>
-      <div class="col-sm-6">
-        <div class="card card-block">
-          <h3 class="card-title">Special title treatment</h3>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <%= link_to "Go Somewhere", fishing_spot_path(fishing_spot), class: "btn btn-primary"%>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card card-block">
+            <h3 class="card-title"><%= fishing_spot.address %></h3>
+            <p class="card-text">Fishing Activity: <%= fishing_spot.fishing_activity %></p>
+            <%= link_to "Go Somewhere", fishing_spot_path(fishing_spot), class: "btn btn-primary"%>
+          </div>
         </div>
       </div>
     <% end %>
-    </div>
   </div>
 </div>
 </div>
