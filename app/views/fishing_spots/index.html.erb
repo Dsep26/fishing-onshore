@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1>Fishing Spots</h1>
+  <h1>Fishing Spots#index</h1>
   <p>Find me in app/views/fishing_spots/index.html.erb</p>
 
    <div class="search">
@@ -10,76 +10,22 @@
       class: "form-control",
       placeholder: "Find Your Location"
       %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 
   <div class="card-container">
     <div class="row">
+    <% @fishingspots.each do |fishing_spot| %>
       <div class="col-sm-6">
         <div class="card card-block">
           <h3 class="card-title">Special title treatment</h3>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <%= link_to "Go Somewhere", fishing_spot_path(fishing_spot), class: "btn btn-primary"%>
         </div>
       </div>
-      <div class="col-sm-6">
-          <div class="card card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
+    <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
