@@ -39,7 +39,7 @@ FishingSpot.create(address: "Trou d'Eau Douce", fishing_activity: fishing_activi
 FishingSpot.create(address: "Grand Sable", fishing_activity: fishing_activity.sample,
                   latitude: -20.327788830986474, longitude: 57.77126356354492)
 FishingSpot.create(address: "Pavillon Du Grand Port", fishing_activity: fishing_activity.sample,
-                  latitude: -20.37508446254399, longitude: 57.721461942216195),
+                  latitude: -20.37508446254399, longitude: 57.721461942216195)
 # FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
 #                   latitude: , longitude: )
 # FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
