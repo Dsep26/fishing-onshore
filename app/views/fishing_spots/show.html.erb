@@ -1,7 +1,5 @@
-<h1>FishingSpots#show</h1>
-<p>Find me in app/views/fishing_spots/show.html.erb</p>
+<h1><%= @fishspot.address %></h1>
 
-  <%= link_to "click me", fishing_spot_hints_path(@fishingspot), class: "btn btn-primary" %>
 
 <%# <div id='map' style='width: 400px; height: 300px;'></div>
   <script>
@@ -23,10 +21,19 @@
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+  <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn btn-primary" %>
   <div>
-    <p><%= @condition %></p>
-    <p><%= @temperature %></p>
-    <p><%= @windspeed %></p>
-    <p><%= @winddirection %></p>
-    <p><%= @humidity %></p>
+    <h4><%= @fishspot.address %>'s Fishing Condition</h4>
+    <img src="<%= @icon %>" alt="Weather Condition" width="60" height="60" class="center">
+    <p>Weather Condition: <%= @condition %></p>
+    <p>Temperature: <%= @temperature %> | Humidity: <%= @humidity %></p>
+    <p>Wind Speed: <%= @windspeed %> | Wind Direction: <%= @winddirection %></p>
   </div>
+
+  <style>
+      .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
