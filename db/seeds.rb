@@ -31,6 +31,17 @@ FishingSpot.create(address: "Grand Gaube", fishing_activity: fishing_activity.sa
 FishingSpot.create(address: "Poudre D'or", fishing_activity: fishing_activity.sample,
                   latitude: -20.058061507727956, longitude: 57.68770706382844)
 FishingSpot.create(address: "Belle Mare", fishing_activity: fishing_activity.sample,
+                  latitude: -20.196354138267452, longitude: 57.77970896107604)
+FishingSpot.create(address: "Trou d'Eau Douce", fishing_activity: fishing_activity.sample,
+                  latitude: -20.236426668965027, longitude: 57.80274128146408)
+FishingSpot.create(address: "Grand Sable", fishing_activity: fishing_activity.sample,
+                  latitude: -20.327788830986474, longitude: 57.77126356354492)
+FishingSpot.create(address: "Pavillon Du Grand Port", fishing_activity: fishing_activity.sample,
+                  latitude: -20.37508446254399, longitude: 57.721461942216195)
+# FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
+#                   latitude: , longitude: )
+FishingSpot.create(address: "Grand River South East", fishing_activity: fishing_activity.sample,
+                  latitude: -20.290622502987738, longitude: 57.780133373962016)
                   latitude: -20.19574283080837, longitude: 57.7780082501809)
 # FishingSpot.create(address: "Trou d'Eau Douce", fishing_activity: fishing_activity.sample,
 #                   latitude: -20.2393777502962, longitude: 57.78923959207842)
