@@ -12,36 +12,36 @@ puts "Database cleaned"
 puts 'seeding...'
 fishing_activity = (0..3).to_a
 
-FishingSpot.create(address: "Riche-Terre", fishing_activity: fishing_activity.sample,
-                  latitude: -20.12586829300821, longitude: 57.50132535042191)
-FishingSpot.create(address: "Le Goulet", fishing_activity: fishing_activity.sample,
-                  latitude: -20.10252501081538, longitude: 57.51427523697359)
-FishingSpot.create(address: "Grande Pointe Aux Piments", fishing_activity: fishing_activity.sample,
-                  latitude: -20.065241259435236, longitude: 57.51892066062756)
+FishingSpot.create(address: "Baie du Tombeau", fishing_activity: fishing_activity.sample,
+                  latitude: -20.13444838250334, longitude: 57.49730623579131)
+FishingSpot.create(address: "Balaclava", fishing_activity: fishing_activity.sample,
+                  latitude: -20.083338086924297, longitude: 57.51248900733028)
+FishingSpot.create(address: "Pointe Aux Piments", fishing_activity: fishing_activity.sample,
+                  latitude: -20.06116877289532, longitude: 57.518972688632736)
 FishingSpot.create(address: "Trou Aux Biches", fishing_activity: fishing_activity.sample,
-                  latitude: -20.034985103251014, longitude: 57.544558646352534)
+                  latitude: -20.029464159960508, longitude: 57.54596801240156)
 FishingSpot.create(address: "Pointe Aux Cannoniers", fishing_activity: fishing_activity.sample,
-                  latitude: -20.003333954728372, longitude: 57.55295275200999)
+                  latitude: -20.003657100036815, longitude: 57.56171646941936)
 FishingSpot.create(address: "Grand Baie", fishing_activity: fishing_activity.sample,
-                  latitude: -20.00467121798037, longitude: 57.57988171204508)
+                  latitude: -20.008934749850624 , longitude: 57.57869837034905)
 FishingSpot.create(address: "Pereybere", fishing_activity: fishing_activity.sample,
-                  latitude: -20.001203140863623, longitude: 57.58039669593043)
+                  latitude: -19.993949902702887, longitude: 57.588962401973866)
 FishingSpot.create(address: "Cap Malheureux", fishing_activity: fishing_activity.sample,
-                  latitude: -19.98503287303906, longitude: 57.61820212104525)
-FishingSpot.create(address: "Melville", fishing_activity: fishing_activity.sample,
-                  latitude: -20.00083020594575, longitude: 57.65744189842974)
+                  latitude: -19.982275634782855, longitude: 57.611296576891135)
+FishingSpot.create(address: "Grand Gaube", fishing_activity: fishing_activity.sample,
+                  latitude: -20.007989610622875, longitude: 57.677556220962586)
 FishingSpot.create(address: "Poudre D'or", fishing_activity: fishing_activity.sample,
-                  latitude: -20.060780035660127, longitude: 57.68552430068679)
+                  latitude: -20.071796374950885, longitude: 57.6922570071525)
 FishingSpot.create(address: "Belle Mare", fishing_activity: fishing_activity.sample,
-                  latitude: -20.197216554668163, longitude: 57.78011021012902)
+                  latitude: -20.196354138267452, longitude: 57.77970896107604)
 FishingSpot.create(address: "Trou d'Eau Douce", fishing_activity: fishing_activity.sample,
-                  latitude: -20.236426668965027, longitude: 57.80274128146408)
-FishingSpot.create(address: "Grand Sable", fishing_activity: fishing_activity.sample,
-                  latitude: -20.327788830986474, longitude: 57.77126356354492)
-FishingSpot.create(address: "Pavillon Du Grand Port", fishing_activity: fishing_activity.sample,
-                  latitude: -20.37508446254399, longitude: 57.721461942216195)
+                  latitude: -20.239602852572407, longitude: 57.79206383710844)
+FishingSpot.create(address: "Grand River South East", fishing_activity: fishing_activity.sample,
+                  latitude: -20.290622502987738, longitude: 57.780133373962016)
+FishingSpot.create(address: "Vieux Grand Port", fishing_activity: fishing_activity.sample,
+                  latitude: -20.375605548760085, longitude: 57.728052431769534)
 FishingSpot.create(address: "Mahebourg", fishing_activity: fishing_activity.sample,
-                  latitude: -20.401561000225215, longitude: 57.703576880806864)
+                  latitude: -20.401484286169943, longitude: 57.70320491481176)
 # FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
 #                   latitude: , longitude: )
 # FishingSpot.create(address: "", fishing_activity: fishing_activity.sample,
