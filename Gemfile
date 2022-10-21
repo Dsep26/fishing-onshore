@@ -80,5 +80,7 @@ gem "devise"
 gem "geocoder"
 
 gem "cloudinary"
-
+gem "browser"
+gem "maxminddb"
+gem "leaflet-rails"
 
