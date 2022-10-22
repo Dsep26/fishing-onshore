@@ -20,20 +20,21 @@
     });
   </script> %>
 
-  <div style="width: 100%; height: 400px;"
+  <div class="map", style="width: 100%; height: 400px;"
     data-controller="map"
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn btn-primary" %>
-  <div>
-    <h4><%= @fishspot.address %>'s Fishing Condition</h4>
-    <img src="<%= @icon %>" alt="Weather Condition" width="60" height="60" class="center">
-    <p>Weather Condition: <%= @condition %></p>
-    <p>Temperature: <%= @temperature %> | Humidity: <%= @humidity %></p>
-    <p>Wind Speed: <%= @windspeed %> | Wind Direction: <%= @winddirection %></p>
+  <div class="box"> 
+    <div class="hid-box">
+      <h2><%= @fishspot.address %>'s Fishing Condition</h2>
+      <img src="<%= @icon %>" alt="Weather Condition" width="60" height="60" class="center">
+      <p class="condition">Weather Condition: <%= @condition %></p>
+      <p class="temp">Temperature: <%= @temperature %> | Humidity: <%= @humidity %></p>
+      <p class="wind">Wind Speed: <%= @windspeed %> | Wind Direction: <%= @winddirection %></p>
+    </div>
   </div>
-
   <style>
       .center {
     display: block;
