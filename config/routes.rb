@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
- 
-  resources :discussions do
-    resources :replies
-  end
 
   devise_for :users
 
@@ -14,11 +10,13 @@ Rails.application.routes.draw do
   # get 'hints/index'
   resources :fishing_spots, only: [:index, :show] do
     resources :hints, only: [:index]
+    resources :discussions, only:[:index, :show] do
+    end
   end
 
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  
   # Defines the root path route ("/")
   # root "articles#index"
 end
