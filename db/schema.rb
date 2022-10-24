@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_070918) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_063315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_070918) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "discussions", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "fishing_spot_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fishing_spot_id"], name: "index_discussions_on_fishing_spot_id"
+    t.index ["user_id"], name: "index_discussions_on_user_id"
+  end
+
   create_table "fishing_spots", force: :cascade do |t|
     t.string "address"
     t.float "latitude"
@@ -60,15 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_070918) do
     t.index ["fishing_spot_id"], name: "index_hints_on_fishing_spot_id"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
   create_table "prefered_fishing_spots", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "fishing_spot_id", null: false
@@ -78,12 +80,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_070918) do
     t.index ["user_id"], name: "index_prefered_fishing_spots_on_user_id"
   end
 
+  create_table "replies", force: :cascade do |t|
+    t.text "content"
+    t.bigint "discussion_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discussion_id"], name: "index_replies_on_discussion_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", null: false
@@ -93,8 +110,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_070918) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "discussions", "fishing_spots"
+  add_foreign_key "discussions", "users"
   add_foreign_key "hints", "fishing_spots"
-  add_foreign_key "posts", "users"
   add_foreign_key "prefered_fishing_spots", "fishing_spots"
   add_foreign_key "prefered_fishing_spots", "users"
+  add_foreign_key "replies", "discussions"
+  add_foreign_key "replies", "users"
 end
