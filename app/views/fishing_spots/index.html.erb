@@ -21,6 +21,7 @@
           <div class="card card-block">
             <h3 class="card-title"><%= fishing_spot.address %></h3>
             <p class="card-text">Fishing Activity: <%= fishing_spot.fishing_activity %></p>
+            <%= cl_image_tag fishing_spot.photo.key, height: 200, width: 200, crop: :fill %>
             <%= link_to "Go Somewhere", fishing_spot_path(fishing_spot), class: "btn btn-primary"%>
           </div>
         </div>
@@ -29,4 +30,3 @@
   </div>
 </div>
 </div>
-
