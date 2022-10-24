@@ -16,12 +16,12 @@ class FishingSpotsController < ApplicationController
   end
 
   def show
-    @fishingspots = FishingSpot.geocoded
-    @marker = {
+    # @fishingspots = FishingSpot.geocoded
+    @marker = [{
       lat: @fishingspot.latitude,
       lng: @fishingspot.longitude,
       image_url: helpers.asset_url("logo.png")
-    }
+    }]
 
     @fishspot = set_spot
     @location = find_spot

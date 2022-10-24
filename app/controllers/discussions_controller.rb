@@ -1,5 +1,6 @@
 class DiscussionsController < ApplicationController
   before_action :set_discussion, only: [:show, :edit, :update, :destroy]
+  before_action :find_channels, only: [:index, :show, :new, :edit]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /discussions
@@ -68,14 +69,8 @@ class DiscussionsController < ApplicationController
     def set_discussion
       @discussion = Discussion.find(params[:id])
     end
-
-    def find_channels
-      @channels = Channel.all.order('created_at desc')
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:title, :content)
+      params.require(:discussion).permit(:title, :content, :channel_id)
     end
-end
 end
