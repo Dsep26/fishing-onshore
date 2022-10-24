@@ -11,7 +11,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1
   # GET /discussions/1.json
   def show
-    @discussions = Discussion.all.order('created_at desc')
+    @discussions = Discussion.order('created_at desc')
   end
 
   # GET /discussions/new
@@ -68,14 +68,8 @@ class DiscussionsController < ApplicationController
     def set_discussion
       @discussion = Discussion.find(params[:id])
     end
-
-    def find_channels
-      @channels = Channel.all.order('created_at desc')
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:title, :content)
+      params.require(:discussion).permit(:title, :content, :fishingspot_id)
     end
-end
 end
