@@ -5,11 +5,62 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 require "open-uri"
 
 puts "Cleaning up database..."
 FishingSpot.destroy_all
+Hint.destroy_all
 puts "Database cleaned"
+
+puts "seeding hints"
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8.png")
+hint = Hint.new(equipment: "Single,Double,Trebble Hooks", description: "Treble saltwater fishing hooks work by snagging the fish when it hits a bait. Treble hooks are sized the same way as other hooks, but it usually takes a smaller treble hook to catch the same size fish as a circle or J-hook. Most plugs use treble hooks so that when the fish realizes it has eaten a lure instead of a real fish, it is already hooked.")
+hint.photo.attach(io: file, filename: "SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8", content_type: "image/png")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/circle_hook.jpeg_jvpgwg.png")
+hint = Hint.new(equipment: "Circle Hook", description: "Circle hooks are mostly used with live or cut fishing bait because the shape of the hook keeps it from becoming lodged in the fish’s gut. As a result, circle saltwater fishing hooks are now considered the best saltwater fishing hooks for catch-and-release fishing.")
+hint.photo.attach(io: file, filename: "circle_hook.jpeg_jvpgwg", content_type: "image/png")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Telescoping-Fishing-Rod.jpeg_afc4kv.jpg")
+hint = Hint.new(equipment: "Telescoping Fishing Rod", description: "The best advantage of this fishing rod is its hassle-free carrying. The rod used to go smaller up to the minimal length. Users can expand the length according to need. ")
+hint.photo.attach(io: file, filename: "Telescoping-Fishing-Rod.jpeg_afc4kv", content_type: "image/jpg")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Spincast-Casting-Rod.jpeg_v3apty.jpg")
+hint = Hint.new(equipment: "Spincast Rod", description: "Casting fishing rods well suited for beginners or children due to ease of use and overall simplicity. The rod features a push-catch system for the discharging line.")
+hint.photo.attach(io: file, filename: "Spincast-Casting-Rod.jpeg_v3apty", content_type: "image/jpg")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Fly-Fishing-Rod.jpeg_m3ddbe.jpg")
+hint = Hint.new(equipment: "Flying Fishining Rod", description: "The structure of the rod is quite similar to other casting rods but has some additional features and advantages. Spin rods allow its users to hold it with the dominant hand for more stability and more power. The reel lies on the bottom end of the rod when casting and reeling in. Operating the rod is relatively easy. Considering the features, it best suits for fishing in lakes, rivers, or boats. These rods and reels come in all sizes and are suitable for nearly every fishing situation.")
+hint.photo.attach(io: file, filename: "Fly-Fishing-Rod.jpeg_m3ddbe", content_type: "image/jpg")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/monofilament-fishing-line.jpeg_xdlil3.jpg")
+hint = Hint.new(equipment: "Monofilament Fishing Line", description: "Monofilament is the most popular type of fishing line and comes in a great variety of strengths and colors. Mono is less expensive than other lines, stretches to absorb shocks, is abrasion resistant, and uniformly round in cross section, which helps keep it neat on the spool. Monofilament is easy to tie knots in, but can suffer from “memory” where it loops in the shape of the spool. Mono comes in several shades, but clear and blue are popular because they disappear underwater and are very difficult for a fish to see.")
+hint.photo.attach(io: file, filename: "monofilament-fishing-line.jpeg_xdlil3", content_type: "image/jpg")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/bait_leech.jpeg_b3qyve.jpg")
+hint = Hint.new(equipment: "Bait Leech", description: "Leeches are excellent live freshwater fishing bait for walleye and northern pike and are readily available from bait shops. Leeches should be hooked through the sucker in the tail. Leeches have suckers at both ends. But the tail sucker disk is larger than the head disk")
+hint.photo.attach(io: file, filename: "bait_leech.jpeg_b3qyve", content_type: "image/jpg")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607615/fishing%20onshore/fishing%20eqp/bait_grubs_worm.jpeg_nxsccy.jpg")
+hint = Hint.new(equipment: "Grubs And Meal Worms", description: "Ideal for pan fish, sunfish and trout, grubs and meal worms are used often as live freshwater bait and are readily available from tackle and bait shops. Use them singly or in multiples.")
+hint.photo.attach(io: file, filename: "bait_grubs_worm.jpeg_nxsccy", content_type: "image/jpg")
+hint.save!
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666614461/fishing%20onshore/fishing%20eqp/bait_grasshopper_dmofbu.jpg")
+hint = Hint.new(equipment: "Insects", description: "Ants, beetles, grasshoppers, crickets and caterpillars are ideal to use as live freshwater fishing bait for catching pan fish, sunfish and trout. Brown trout are especially attracted to ants presented on a fly.")
+hint.photo.attach(io: file, filename: "bait_grasshopper_dmofbu", content_type: "image/jpg")
+hint.save!
+
+puts "Seeding of Hints done !"
 
 puts 'Seeding Fishing Spots'
 fishing_activity = (1..3).to_a
@@ -155,27 +206,3 @@ fishingspot.save
 # fishingspot = FishingSpot.new(address: "16 villa Gaudelet, Paris", fishing_activity: 5,latitude: 48.8648601,  longitude: 2.3798866)
 
 puts "Seeding of Fishing Spots done !"
-
-puts "seeding hints"
-
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8.png")
-hint = Hint.new(equipment: "Single,Double,Trebble Hooks", description: "gdfgdg")
-hint.photo.attach(io: file, filename: "SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8", content_type: "image/jpg")
-hint.save
-
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/circle_hook.jpeg_jvpgwg.png")
-hint = Hint.new(equipment: "Circle Hook", description: "gdfgdg")
-hint.photo.attach(io: file, filename: "circle_hook.jpeg_jvpgwg", content_type: "image/jpg")
-hint.save
-
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Telescoping-Fishing-Rod.jpeg_afc4kv.jpg")
-hint = Hint.new(equipment: "Telescoping Fishing Rod", description: "gdfgdg")
-hint.photo.attach(io: file, filename: "Telescoping-Fishing-Rod.jpeg_afc4kv", content_type: "image/jpg")
-hint.save
-
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Spincast-Casting-Rod.jpeg_v3apty.jpg")
-hint = Hint.new(equipment: "Spincast Rod", description: "gdfgdg")
-hint.photo.attach(io: file, filename: "Spincast-Casting-Rod.jpeg_v3apty", content_type: "image/jpg")
-hint.save
-
-puts "Seeding of Hints done !"

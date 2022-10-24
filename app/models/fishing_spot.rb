@@ -14,7 +14,6 @@
 class FishingSpot < ApplicationRecord
   geocoded_by :address
   # Associations
-  has_many :hints, dependent: :destroy
   has_many :prefered_fishing_spots, dependent: :destroy
   has_one_attached :photo
 

@@ -1,5 +1,5 @@
 class HintsController < ApplicationController
-  before_action :set_hint, only: [:index]
+  # before_action :set_hint, only: [:index]
 
   def index
     @hints = Hint.all
@@ -8,7 +8,7 @@ class HintsController < ApplicationController
   private
 
   def set_hint
-    @hint = Hint.find(params[:id])
+    @hints = Hint.find(params[:id])
   end
 
   def hint_params
