@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
-  # get 'posts/index'
-  # get 'posts/new'
-  # get 'posts/create'
-  # get 'posts/edit'
-  # get 'posts/update'
-  # get 'posts/destroy'
-  resources :posts, except: :show
+ 
+  resources :discussions do
+    resources :replies
+  end
 
   devise_for :users
 
@@ -18,6 +15,8 @@ Rails.application.routes.draw do
   resources :fishing_spots, only: [:index, :show] do
     resources :hints, only: [:index]
   end
+
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
