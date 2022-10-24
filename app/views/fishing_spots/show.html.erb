@@ -25,7 +25,9 @@
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
   <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn btn-primary" %>
+  
   <div class="box"> 
     <div class="hid-box">
       <h2><%= @fishspot.address %>'s Fishing Condition</h2>

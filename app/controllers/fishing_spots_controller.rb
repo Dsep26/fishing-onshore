@@ -17,12 +17,12 @@ class FishingSpotsController < ApplicationController
 
   def show
     @fishingspots = FishingSpot.geocoded
-    @marker = @fishingspots.map do |fishingspot| {
-      lat: fishingspot.latitude,
-      lng: fishingspot.longitude,
+    @marker = {
+      lat: @fishingspot.latitude,
+      lng: @fishingspot.longitude,
       image_url: helpers.asset_url("logo.png")
     }
-    end
+
     @fishspot = set_spot
     @location = find_spot
     # Weather Condition
