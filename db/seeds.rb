@@ -155,3 +155,27 @@ fishingspot.save
 # fishingspot = FishingSpot.new(address: "16 villa Gaudelet, Paris", fishing_activity: 5,latitude: 48.8648601,  longitude: 2.3798866)
 
 puts "Seeding of Fishing Spots done !"
+
+puts "seeding hints"
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8.png")
+hint = Hint.new(equipment: "Single,Double,Trebble Hooks", description: "gdfgdg")
+hint.photo.attach(io: file, filename: "SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8", content_type: "image/jpg")
+hint.save
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/circle_hook.jpeg_jvpgwg.png")
+hint = Hint.new(equipment: "Circle Hook", description: "gdfgdg")
+hint.photo.attach(io: file, filename: "circle_hook.jpeg_jvpgwg", content_type: "image/jpg")
+hint.save
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Telescoping-Fishing-Rod.jpeg_afc4kv.jpg")
+hint = Hint.new(equipment: "Telescoping Fishing Rod", description: "gdfgdg")
+hint.photo.attach(io: file, filename: "Telescoping-Fishing-Rod.jpeg_afc4kv", content_type: "image/jpg")
+hint.save
+
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666607616/fishing%20onshore/fishing%20eqp/Spincast-Casting-Rod.jpeg_v3apty.jpg")
+hint = Hint.new(equipment: "Spincast Rod", description: "gdfgdg")
+hint.photo.attach(io: file, filename: "Spincast-Casting-Rod.jpeg_v3apty", content_type: "image/jpg")
+hint.save
+
+puts "Seeding of Hints done !"
