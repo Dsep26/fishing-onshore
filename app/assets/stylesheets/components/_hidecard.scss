@@ -1,0 +1,34 @@
+h1 {
+    margin: 0
+  }
+  .box {
+    height: 297px;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    opacity: 70%;
+    
+  }
+  .hid-box {
+    top: 100%;
+    position: relative;
+    transition: all .3s ease-out;
+    background: #102b42;
+    height: 100%;
+    opacity: 100%;
+  }
+  
+  .box:hover > .hid-box{
+    top: 0;
+  }
+
+  h2 {
+    color: white;
+    font-size: 22px;
+  }
+  .condition {
+    color: white;
+    font-size: 20px;
+  }
