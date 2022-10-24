@@ -1,6 +1,5 @@
 class DiscussionsController < ApplicationController
   before_action :set_discussion, only: [:show, :edit, :update, :destroy]
-  before_action :find_channels, only: [:index, :show, :new, :edit]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /discussions
@@ -12,7 +11,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1
   # GET /discussions/1.json
   def show
-    @discussions = Discussion.all.order('created_at desc')
+    @discussions = Discussion.order('created_at desc')
   end
 
   # GET /discussions/new
@@ -71,6 +70,6 @@ class DiscussionsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:title, :content, :channel_id)
+      params.require(:discussion).permit(:title, :content, :fishingspot_id)
     end
 end
