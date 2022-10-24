@@ -5,8 +5,7 @@ class FishingSpotsController < ApplicationController
   before_action :set_spot, only: :show
 
   def index
-    @fishingspots = FishingSpot.all
-
+    @fishingspots = FishingSpot.order(fishing_activity: :desc)
   end
 
   def new
