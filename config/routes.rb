@@ -13,9 +13,10 @@ Rails.application.routes.draw do
     resources :discussions, only:[:index, :create] do
     end
   end
-resources :discussions, only:[:show, :destroy] do
-  resources :replies, only:[:create, :destroy]
-end  
+  resources :discussions, only:[:show, :destroy, :edit, :update] do
+    resources :replies, only:[:create, :edit, :destroy]
+  end  
+ 
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
