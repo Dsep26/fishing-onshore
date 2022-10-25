@@ -5,13 +5,13 @@ body {
   margin:0;
 }
 
-h1 {
+#title {
   font-family: 'Lato', sans-serif;
   font-weight:300;
   letter-spacing: 2px;
   font-size: 82px;
 }
-p {
+.content > p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
   font-size:14px;
@@ -24,8 +24,8 @@ p {
   text-align:center;
   background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
   color:white;
-  
-  
+
+
 }
 
 .inner-header {
@@ -37,7 +37,7 @@ p {
 
 .inner-header-h2{
     height: 42vw;
-    width:100%;  
+    width:100%;
 }
 
 
@@ -91,7 +91,7 @@ p {
   0% {
    transform: translate3d(-90px,0,0);
   }
-  100% { 
+  100% {
     transform: translate3d(85px,0,0);
   }
 }
@@ -105,7 +105,7 @@ p {
   .content{
     height: 17vh;
   }
-  h1 {
+  #title {
     font-size:36px;
     font-weight: 1000;
   }
@@ -117,7 +117,7 @@ p {
     align-content: center;
 }
 
-h2{
+#slogan {
     padding-top: 82px;
     text-align: center;
     font-style: italic;
@@ -135,7 +135,7 @@ h2{
   .content{
     height: 17vh;
   }
-  h1 {
+  #title {
     font-size:36px;
     font-weight: 1000;
   }

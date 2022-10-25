@@ -2,24 +2,67 @@ h1 {
     margin: 0
   }
   .box {
-    height: 297px;
+    height: 45vh;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    opacity: 70%;
-    
+    // border-top-left-radius: 15px;
+    // border-top-right-radius: 15px;
+    opacity: 1;
   }
-  .hid-box {
-    top: 100%;
-    position: relative;
-    transition: all .3s ease-out;
-    background: #102b42;
-    height: 100%;
-    opacity: 100%;
+
+  .weather-card {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
   }
-  
+
+  .condition, .temperature, .humidity, .wind {
+    width:120px;
+    height: 120px;
+    background-color:rgb(145, 158, 131);
+    padding: 0 auto;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+
+  .img-icon {
+    width: 100%;
+    height:75px;
+  }
+
+  .icon {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height:75px;
+  }
+
+  .temperature > .fa-solid {
+    color:red;
+    // display: block;
+    margin: 0 auto;
+    left:50%;
+
+  }
+
+  .humidity >.fa-solid {
+    color: rgb(112, 154, 159);
+    display: block;
+    margin: 0 auto;
+  }
+
+  // .hid-box {
+  //   top: 100%;
+  //   position: relative;
+  //   transition: all .3s ease-out;
+  //   background: inherit;
+  //   height: 100%;
+  //   opacity: 100%;
+  // }
+
   .box:hover > .hid-box{
     top: 0;
   }
@@ -28,7 +71,9 @@ h1 {
     color: white;
     font-size: 22px;
   }
-  .condition {
+
+  .text-weather {
     color: white;
     font-size: 20px;
+    text-align: center;
   }
