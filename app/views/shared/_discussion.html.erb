@@ -7,7 +7,7 @@
           <%= discussion.user.name %>
         </div>
         <div class="column is-8">
-          <%= link_to discussion do %>
+          <%= link_to discussion_path(discussion) do %>
             <h3 class="title is-5"><%= discussion.title %></h3>
           <% end %>
           <div class="content">
@@ -23,7 +23,7 @@
         <% if discussion.user == current_user %>
         <div class="column has-text-right">
           <%# <%= link_to 'Edit', edit_discussion_path(discussion), class:'button' %> 
-          <%= link_to 'Delete', discussion, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+          <%= link_to 'Delete', fishing_spot_discussions_path,  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button" %>
         </div>
         <% end %>
 

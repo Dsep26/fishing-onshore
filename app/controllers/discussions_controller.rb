@@ -44,7 +44,7 @@ class DiscussionsController < ApplicationController
   
   def update
     respond_to do |format|
-      if @discussion.update(discussion_params)
+      if @discussion.update!(discussion_params)
         format.html { redirect_to @discussion, notice: 'Discussion was successfully updated.' }
         format.json { render :show, status: :ok, location: @discussion }
       else
