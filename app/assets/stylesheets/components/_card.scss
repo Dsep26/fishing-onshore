@@ -28,7 +28,7 @@
   padding: 10px;
   margin: 15px;
   // height: 24vh;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 20px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -48,12 +48,13 @@
 
 .card-address {
   font-family: 'Philosopher', sans-serif;
+  font-weight: bold;
   text-align: center;
 }
 
 .card-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: italic;
-  font-weight: bold;
   text-align: center;
 }
 
@@ -61,10 +62,40 @@
   margin: 0 auto;
 }
 
-.fa-solid {
+.card-activity > .fa-solid {
   color: gold;
 }
 
-p {
+.btn-fish {
+  -webkit-animation: glowing 1ms infinite;
+  text-align: center;
+  text-decoration: none;
+  width: 10rem;
+  height:50px;
+  background-color: rgb(227, 201, 162);
+  color: black;
+  border: 3px solid #fff;
+  border-top-left-radius: 22px;
+  border-bottom-right-radius: 15px;
+  font-size: 1.1rem;
   font-weight: bold;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    border-color: rgb(41, 126, 196);
+    -webkit-box-shadow: 0 0 20px #034675;
+  }
+
+  50% {
+    border-color: rgb(41, 126, 196);
+    -webkit-box-shadow: 0 0 20px #034675;
+  }
+
+  100% {
+    border-color: rgb(41, 126, 196);
+    -webkit-box-shadow: 0 0 20px #034675;
+  }
 }
