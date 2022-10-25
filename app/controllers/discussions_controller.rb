@@ -2,32 +2,33 @@ class DiscussionsController < ApplicationController
   before_action :set_discussion, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /discussions
-  # GET /discussions.json
+  
   def index
+    @fishing_spot = FishingSpot.find(params[:fishing_spot_id])
+    @discussions = Discussion.all.order('created_at desc')
+    @discussion = Discussion.new
+  end
+
+  def show
     @discussions = Discussion.all.order('created_at desc')
   end
 
-  # GET /discussions/1
-  # GET /discussions/1.json
-  def show
-    @discussions = Discussion.order('created_at desc')
-  end
-
-  # GET /discussions/new
+  
   def new
+    @fishing_spot = FishingSpot.find(params[:fishing_spot_id])
     @discussion = current_user.discussions.build
   end
 
-  # GET /discussions/1/edit
+  
   def edit
   end
 
-  # POST /discussions
-  # POST /discussions.json
+  
   def create
-    @discussion = current_user.discussions.build(discussion_params)
-
+    @fishing_spot = FishingSpot.find(params[:fishing_spot_id])
+    @discussion = Discussion.new(discussion_params)
+    @discussion.fishing_spot_id = @fishing_spot.id
+    @discussion.user = current_user
     respond_to do |format|
       if @discussion.save
         format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
@@ -36,11 +37,10 @@ class DiscussionsController < ApplicationController
         format.html { render :new }
         format.json { render json: @discussion.errors, status: :unprocessable_entity }
       end
-    end
+    end 
   end
 
-  # PATCH/PUT /discussions/1
-  # PATCH/PUT /discussions/1.json
+  
   def update
     respond_to do |format|
       if @discussion.update(discussion_params)
@@ -53,14 +53,13 @@ class DiscussionsController < ApplicationController
     end
   end
 
-  # DELETE /discussions/1
-  # DELETE /discussions/1.json
+ 
   def destroy
     @discussion.destroy
     respond_to do |format|
       format.html { redirect_to discussions_url, notice: 'Discussion was successfully destroyed.' }
       format.json { head :no_content }
-    end
+    end 
   end
 
   private
@@ -70,6 +69,6 @@ class DiscussionsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:title, :content, :fishingspot_id)
+      params.require(:discussion).permit(:title, :content, :fishing_spot_id)
     end
 end
