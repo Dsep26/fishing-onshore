@@ -1,0 +1,57 @@
+.card-product-hint {
+  overflow: hidden;
+  // height: 170px;
+  width: 350px;
+  background: rgb(242, 242, 242);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px 8px #29292970;
+  border-radius: 10px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 25px;
+    color:black;
+    padding-top: 12px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    margin-top: 8px;
+    padding-inline: 10px;
+    color:black;
+    text-align: center;
+    // height: 150px;
+  }
+  img {
+    position:relative;
+    height: 200px;
+    width: 250px;
+    object-fit: cover;
+    border: 1px solid rgb(164, 157, 157);
+    border-radius: 4px;
+    padding: 5px;
+  }
+}
+
+.card-product-hint .card-product-infos {
+  padding: 20px;
+}
+
+.container-hint{
+  position: relative;
+  background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+// .container-hint h1{
+//   font-family: 'Times New Roman', Times, serif;
+// }
