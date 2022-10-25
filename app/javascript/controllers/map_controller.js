@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
-import MapboxDirections from "mapbox-gl-directions/src/directions"
+
+import * as MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 export default class extends Controller {
   static values = {
     apiKey: String,
@@ -23,9 +24,9 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
       style: 'mapbox://styles/mapbox/streets-v11',
- 
+
     })
-    
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
@@ -39,14 +40,14 @@ export default class extends Controller {
         trackUserLocation: true,
             // Draw an arrow next to the location dot to indicate which direction the device is heading.
         showUserHeading: true,
-        
+
       })
     this.map.addControl(geolocate);
     this.map.on('load', () => {
       console.log(geolocate)
       geolocate.trigger();
     })
-    
+
     this.map.addControl(
       new MapboxDirections({
       accessToken: mapboxgl.accessToken
@@ -67,7 +68,7 @@ export default class extends Controller {
             directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
           })
         }
-       })    
+       })
   }
   #addMarkersToMap() {
     this.markerValue.forEach((marker) => {
@@ -78,7 +79,7 @@ export default class extends Controller {
       customMarker.style.backgroundSize = "contain"
       customMarker.style.width = "25px"
       customMarker.style.height = "25px"
-      
+
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
