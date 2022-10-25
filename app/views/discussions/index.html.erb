@@ -2,5 +2,6 @@
 <p>Find me in app/views/posts/index.html.erb</p>
 
 <div class="columns">
-  
+  <%= render 'shared/discussion' %> 
+  <%= render 'form', discussion: @discussion%>
 </div>

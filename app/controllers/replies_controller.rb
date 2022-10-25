@@ -6,7 +6,7 @@ class RepliesController < ApplicationController
     def create
       @reply = @discussion.replies.create(params[:reply].permit(:reply, :discussion_id))
       @reply.user_id = current_user.id
-  
+
       respond_to do |format|
         if @reply.save
           format.html { redirect_to discussion_path(@discussion) }

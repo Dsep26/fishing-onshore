@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
-// import mapboxgl from "mapbox-gl"
+import mapboxgl from "mapbox-gl"
+import MapboxDirections from "mapbox-gl-directions/src/directions"
 export default class extends Controller {
   static values = {
     apiKey: String,
@@ -9,27 +9,65 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-    
+    console.log('connected')
+    let directions = new MapboxDirections({
+      accessToken: mapboxgl.accessToken,
+      unit: 'metric',
+      profile: 'mapbox/driving',
+      alternatives: false,
+      geometries: 'geojson',
+      controls: { instructions: false },
+      flyTo: false
+    });
 
     this.map = new mapboxgl.Map({
       container: this.element,
       style: 'mapbox://styles/mapbox/streets-v11',
-      
+ 
     })
+    
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl }))
-    this.map.addControl(new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-          // When active the map will receive updates to the device's location as it changes.
-      trackUserLocation: true,
-          // Draw an arrow next to the location dot to indicate which direction the device is heading.
-      showUserHeading: true
-    }));  
+    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //   mapboxgl: mapboxgl }))
+      const geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+            // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true,
+        
+      })
+    this.map.addControl(geolocate);
+    this.map.on('load', () => {
+      console.log(geolocate)
+      geolocate.trigger();
+    })
+    
+    this.map.addControl(
+      new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+      }),
+      'top-left'
+      );
+      this.map.scrollZoom.enable();
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        // window.location.reload()
+        console.log(directions)
+        if (this.map.loaded()) {
+          directions.setOrigin([longitude, latitude]);
+          directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
+        } else {
+          this.map.on("load", () => {
+            directions.setOrigin([longitude, latitude]);
+            directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
+          })
+        }
+       })    
   }
   #addMarkersToMap() {
     this.markerValue.forEach((marker) => {
@@ -43,7 +81,7 @@ export default class extends Controller {
       
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // Add this
+        .setPopup(popup)
         .addTo(this.map)
     });
   }
