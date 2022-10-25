@@ -11,6 +11,7 @@ class DiscussionsController < ApplicationController
 
   def show
     @discussions = Discussion.all.order('created_at desc')
+    @reply = Reply.new
   end
 
   
