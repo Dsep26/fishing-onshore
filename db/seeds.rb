@@ -9,6 +9,8 @@
 require "open-uri"
 
 puts "Cleaning up database..."
+Reply.destroy_all
+Discussion.destroy_all
 FishingSpot.destroy_all
 Hint.destroy_all
 puts "Database cleaned"
