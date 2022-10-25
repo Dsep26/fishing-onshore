@@ -2,17 +2,15 @@ require "json"
 require "open-uri"
 
 class FishingSpotsController < ApplicationController
-  before_action :set_spot, only: :show
+  before_action :set_spot, only: [:show, :photo]
 
   def index
-    @fishingspots = FishingSpot.all
-
+    @fishingspots = FishingSpot.order(fishing_activity: :desc)
   end
 
   def new
     @fishingspots = FishingSpot.new(fish_params)
     @fishingspot = FishingSpot.save(set_spot)
-
   end
 
   def show
@@ -46,8 +44,9 @@ class FishingSpotsController < ApplicationController
   end
 
   def fish_params
-    params.require(:fishingspots).permit(:address, :fishing_activity, :longitude, :latitude)
+    params.require(:fishingspots).permit(:address, :fishing_activity, :longitude, :latitude, :photo)
   end
+
   def find_spot
     url = "https://api.weatherapi.com/v1/current.json?key=7f022012d2f24e53a3f100654221910&q=#{@fishspot.latitude},#{@fishspot.longitude}"
     location_serialized = URI.open(url).read

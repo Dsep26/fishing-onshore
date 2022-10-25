@@ -14,8 +14,8 @@
 class FishingSpot < ApplicationRecord
   geocoded_by :address
   # Associations
-  has_many :hints, dependent: :destroy
   has_many :prefered_fishing_spots, dependent: :destroy
+  has_one_attached :photo
 
   # Validations
   validates :fishing_activity, presence: true
@@ -24,5 +24,5 @@ class FishingSpot < ApplicationRecord
   validates :longitude, presence: true
   # validates_with GoodnessValidator
   after_validation :geocode, if: :will_save_change_to_address?
-  
+
 end

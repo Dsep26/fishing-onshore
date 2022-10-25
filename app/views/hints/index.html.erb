@@ -1,14 +1,12 @@
-<%= render "shared/navbar" %>
 <div class="container-hint">
-  <h1>Hints#index</h1>
+  <h1>Hints</h1>
   <p>Fishing equipments</p>
-
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Types</h2>
-      <p><strong>Description<strong>.</p>
+  <% @hints.each_with_index do |hint, index| %>
+    <div class="card-product-hint">
+        <h2><%= hint.equipment %></h2>
+        <%= cl_image_tag hint.photo.key %>
+        <p><%= hint.description %></p>
     </div>
-  </div>
+  <% end %>
   <%= link_to "Back", :back, class: "btn btn-primary" %>
 </div>

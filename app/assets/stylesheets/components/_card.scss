@@ -1,21 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 
-.card-container{
-  position: relative;
-  padding: 20px;
-
-}
-
-.card-block{
-  position: relative;
-  padding: 20px;
-  margin: 6px;
-  height: 24vh;
-}
-
-.container{
-  position: relative;
+.container {
+  // position: relative;
   background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
   background-size: cover;
   display: flex;
@@ -24,20 +11,60 @@
   padding-bottom: 40px;
 }
 
-p{
-font-weight: bold;
+.card-container{
+  // position:relative;
+  padding: 0px;
+  margin-top: 20px;
+  max-width: 80%;
+  width: 80%;
 }
 
-.card-title{
+.search {
+  padding-top:20px
+}
+
+.card-block{
+  position: relative;
+  padding: 10px;
+  margin: 15px;
+  // height: 24vh;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.card-image {
+  overflow: hidden;
+  margin-bottom: 15px;
+  height: 175px;
+  width: 100%;
+  background-size:contain;
+  clip-path:polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  // transform: perspective(300px) translateZ(40px);
+  border-top-left-radius: 30px;
+  // border-top-right-radius: 15px;
+}
+
+.card-address {
   font-family: 'Philosopher', sans-serif;
   text-align: center;
 }
 
-.card-text{
+.card-text {
   font-style: italic;
   font-weight: bold;
+  text-align: center;
 }
 
-.col-sm-6{
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.card-activity {
+  margin: 0 auto;
+}
+
+.fa-solid {
+  color: gold;
+}
+
+p {
+  font-weight: bold;
 }
