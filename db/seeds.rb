@@ -22,7 +22,7 @@ hint = Hint.new(equipment: "Single,Double,Trebble Hooks", description: "Treble s
 hint.photo.attach(io: file, filename: "SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8", content_type: "image/png")
 hint.save!
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666694984/fishing%20onshore/fishing%20eqp/circle_hook_nlvgv3.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666767200/fishing%20onshore/fishing%20eqp/hook_ivkzaz.jpg")
 hint = Hint.new(equipment: "Circle Hook", description: "Circle hooks are mostly used with live or cut fishing bait because the shape of the hook keeps it from becoming lodged in the fish’s gut. As a result, circle saltwater fishing hooks are now considered the best saltwater fishing hooks for catch-and-release fishing.")
 hint.photo.attach(io: file, filename: "circle_hook_nlvgv3", content_type: "image/png")
 hint.save!
