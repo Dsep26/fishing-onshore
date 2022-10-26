@@ -24,11 +24,11 @@
   </div>
 
   <div class="button-list">
-    <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn-fish" %>
-    <button type="button" class="btn-fish" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn-spot" %>
+    <button type="button" class="btn-weather" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Weather
     </button>
-    <%= link_to "Discussions",  fishing_spot_discussions_path(@fishingspot), class: "btn-fish" %>
+    <%= link_to "Discussions",  fishing_spot_discussions_path(@fishingspot), class: "btn-discussion" %>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -47,20 +47,28 @@
               <p class="text-condition-direction"><%= @condition %></p>
             </div>
             <div class="temperature">
-              <p class="text-temperature-humidity-speed"><%= @temperature %>&deg;C</p>
-              <i class="fa-solid fa-temperature-half fa-3x"></i>
+              <p class="text-temperature-humidity-speed"><%= @temperature %></p>
+              <%= image_tag "celsius.gif", class:"icon-gif" %>
+              <%# <img src="../../assets/images/celsius.gif" alt="Temperature" class="icon-gif"> %>
+              <%# <i class="fa-solid fa-temperature-half fa-3x"></i> %>
             </div>
             <div class="humidity">
               <p class="text-temperature-humidity-speed"><%= @humidity %> %</p>
-              <i class="fa-solid fa-droplet fa-3x"></i>
+              <%= image_tag "water.gif", class:"icon-gif" %>
+              <%# <i class="fa-solid fa-droplet fa-3x"></i> %>
+              <%# <img src="../../assets/images/drop.gif" alt="Humidity" class="icon-gif"> %>
             </div>
             <div class="speed">
               <p class="text-temperature-humidity-speed"><%= @windspeed %> kph</p>
-              <i class="fa-solid fa-wind fa-3x"></i>
+              <%= image_tag "wind.gif", class:"icon-gif" %>
+              <%# <i class="fa-solid fa-wind fa-3x"></i> %>
+              <%# <img src="../../assets/images/wind.gif" alt="Wind Speed" class="icon-gif"> %>
             </div>
             <div class="direction">
               <p class="text-condition-direction"><%= @winddirection %></p>
-              <i class="fa-regular fa-compass fa-3x"></i>
+              <%# <i class="fa-regular fa-compass fa-3x"></i> %>
+              <%= image_tag "compass.gif", class:"icon-gif" %>
+              <%# <img src="../../assets/images/compass.gif" alt="Wind Direction" class="icon-gif"> %>
             </div>
           </div>
         </div>
