@@ -22,7 +22,7 @@ hint = Hint.new(equipment: "Single,Double,Trebble Hooks", description: "Treble s
 hint.photo.attach(io: file, filename: "SINGLE_DOUBLE_TREBLE_HOOKS.jpeg_vgxoo8", content_type: "image/png")
 hint.save!
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666694984/fishing%20onshore/fishing%20eqp/circle_hook_nlvgv3.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666767200/fishing%20onshore/fishing%20eqp/hook_ivkzaz.jpg")
 hint = Hint.new(equipment: "Circle Hook", description: "Circle hooks are mostly used with live or cut fishing bait because the shape of the hook keeps it from becoming lodged in the fish’s gut. As a result, circle saltwater fishing hooks are now considered the best saltwater fishing hooks for catch-and-release fishing.")
 hint.photo.attach(io: file, filename: "circle_hook_nlvgv3", content_type: "image/png")
 hint.save!
@@ -67,10 +67,10 @@ puts "Seeding of Hints done !"
 puts 'Seeding Fishing Spots'
 fishing_activity = (1..3).to_a
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698157/fishing%20onshore/new%20photo/baiedutombeau_fnxzch.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666761026/fishing%20onshore/correction%20foto/baie_du_tombeau_pizyqh.jpg")
 fishingspot = FishingSpot.new(address: "Baie du Tombeau", fishing_activity: fishing_activity.sample,
                   latitude: -20.12301961928354, longitude: 57.49754069432245)
-fishingspot.photo.attach(io: file, filename: "baiedutombeau_fnxzch", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "baie_du_tombeau_pizyqh", content_type: "image/jpg")
 fishingspot.save
 
 # fishingspot = FishingSpot.new(address: "Balaclava", fishing_activity: fishing_activity.sample,
@@ -82,10 +82,10 @@ fishingspot = FishingSpot.new(address: "Pointe Aux Piments", fishing_activity: f
 fishingspot.photo.attach(io: file, filename: "Pointe_Aux_Piments_olj0u", content_type: "image/jpg")
 fishingspot.save
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698158/fishing%20onshore/new%20photo/trouxauxbiches_ticex6.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666765183/fishing%20onshore/fishingspot%20photo/Trou_Aux_Biches_n5sycm_shpxmv.jpg")
 fishingspot = FishingSpot.new(address: "Trou Aux Biches", fishing_activity: fishing_activity.sample,
                   latitude: -20.035157332680612, longitude: 57.54495240258001)
-fishingspot.photo.attach(io: file, filename: "trouxauxbiches_ticex6", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "Trou_Aux_Biches_n5sycm_shpxmv", content_type: "image/jpg")
 fishingspot.save
 
 file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666594017/fishing%20onshore/fishingspot%20photo/grand_baie_lxrawn.jpg")
@@ -94,16 +94,16 @@ fishingspot = FishingSpot.new(address: "Grand Baie", fishing_activity: fishing_a
 fishingspot.photo.attach(io: file, filename: "grand_baie_lxrawn", content_type: "image/jpg")
 fishingspot.save
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698158/fishing%20onshore/new%20photo/pereybere-beach_gso9hi.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666762502/fishing%20onshore/correction%20foto2/pereybere_v4phdx.jpg")
 fishingspot = FishingSpot.new(address: "Pereybere", fishing_activity: fishing_activity.sample,
                   latitude: -19.99400914669289, longitude: 57.5890335905668)
-fishingspot.photo.attach(io: file, filename: "pereybere-beach_gso9hi", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "pereybere_v4phdx", content_type: "image/jpg")
 fishingspot.save
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698157/fishing%20onshore/new%20photo/capmalhereux_rgevpq.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666761026/fishing%20onshore/correction%20foto/Cap_Malheureux_eraje5.jpg")
 fishingspot = FishingSpot.new(address: "Cap Malheureux", fishing_activity: fishing_activity.sample,
                   latitude: -19.9842516531196, longitude: 57.61653176253597)
-fishingspot.photo.attach(io: file, filename: "capmalhereux_rgevpq", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "Cap_Malheureux_eraje5", content_type: "image/jpg")
 fishingspot.save
 
 file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666590672/fishing%20onshore/fishingspot%20photo/Grand_Gaube_y2zyck.jpg")
@@ -112,16 +112,16 @@ fishingspot = FishingSpot.new(address: "Grand Gaube", fishing_activity: fishing_
 fishingspot.photo.attach(io: file, filename: "Grand_Gaube_y2zyck", content_type: "image/jpg")
 fishingspot.save
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698158/fishing%20onshore/new%20photo/poudredor_quulps.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666764519/fishing%20onshore/correction%20foto/poudredor_n9xcfv.jpg")
 fishingspot = FishingSpot.new(address: "Poudre D'or", fishing_activity: fishing_activity.sample,
                   latitude: -20.058061507727956, longitude: 57.68770706382844)
-fishingspot.photo.attach(io: file, filename: "poudredor_quulps", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "poudre_d_or_jpeg_jobwnl_qa0tbl", content_type: "image/jpg")
 fishingspot.save
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698158/fishing%20onshore/new%20photo/BelleMare_tqkjgd.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666761026/fishing%20onshore/correction%20foto/Belle_Mare_obptsq.jpg")
 fishingspot = FishingSpot.new(address: "Belle Mare", fishing_activity: fishing_activity.sample,
                   latitude: -20.19574283080837, longitude: 57.7780082501809)
-fishingspot.photo.attach(io: file, filename: "BelleMare_tqkjgd", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "Belle_Mare_obptsq", content_type: "image/jpg")
 fishingspot.save
 
 # fishingspot = FishingSpot.new(address: "Trou d'Eau Douce", fishing_activity: fishing_activity.sample,
@@ -129,10 +129,10 @@ fishingspot.save
 # fishingspot = FishingSpot.new(address: "Grand River South East", fishing_activity: fishing_activity.sample,
 #                   latitude: -20.291693824791466, longitude: 57.78358418662228)
 
-file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666698158/fishing%20onshore/new%20photo/vieuxgrandport_pbua46.jpg")
+file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666763953/fishing%20onshore/new%20photo/vgp_bb6uy8.jpg")
 fishingspot = FishingSpot.new(address: "Vieux Grand Port", fishing_activity: fishing_activity.sample,
                   latitude: -20.37680233725814, longitude: 57.71973966452046)
-fishingspot.photo.attach(io: file, filename: "vieuxgrandport_pbua46", content_type: "image/jpg")
+fishingspot.photo.attach(io: file, filename: "vgp_bb6uy8", content_type: "image/jpg")
 fishingspot.save
 
 file = URI.open("https://res.cloudinary.com/df3klwao8/image/upload/v1666590673/fishing%20onshore/fishingspot%20photo/Mahebourg_ejqyj9.jpg")
