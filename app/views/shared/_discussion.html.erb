@@ -1,14 +1,14 @@
 <div class="column is-8">
-  <h3 class="title is-5 has-text-grey-light">Spot Discussions</h3>
+  <h3 class="title is-5 has-text-grey-light">Spot Discussion</h3>
   <div class="discussions">
     <% @discussions.each do |discussion| %>
       <div class="columns bb-not-last pv10">
-        <div class="column is-1">
+        <div class="column-user is-1">
           <%= discussion.user.name %>
         </div>
         <div class="column is-8">
           <%= link_to discussion_path(discussion) do %>
-            <h3 class="title is-5"><%= discussion.title %></h3>
+            <h3 class="title-dis is-5"><%= discussion.title.capitalize %></h3>
           <% end %>
           <div class="content-reply">
             <%= discussion.content %>
