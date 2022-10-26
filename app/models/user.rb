@@ -8,5 +8,5 @@ class User < ApplicationRecord
   # has_many :prefered_fishing_spots, dependent: :destroy
   # has_many :posts, dependent: :destroy
   # # Validation
-  # validates :name, presence: true
+  validates :name, presence: true
 end
