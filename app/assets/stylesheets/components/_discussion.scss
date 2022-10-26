@@ -1,10 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Roboto&family=Roboto+Slab:wght@300&family=Splash&family=Titan+One&display=swap');
 // index
  .columns {
     background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+    height: 100%;
+    padding-bottom: 198px;
+}
+
+.content-reply {
+    border-radius: 20px;
+    padding-left: 10px;
+}
+.title {
+    font-family: 'Roboto Slab', serif;
+    padding-left: 10px;
 }
 
 
 // show
-.content {
+.discuss {
     background-color: transparent;
+    padding-left: 8px;
+    font-size: 20px;
+    
+}
+.button {
+    color: white ;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.discussion-replies {
+    height: 14vh;
+}
+
+.discussion-title{
+    padding-left: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+.subtitle {
+    padding-left: 10px;
+    color: yellow;
+}
+.columns-show {
+    background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+    height: 100%;
+    padding-bottom: 198px;
+}
+
+.rep {
+    font-size: 10px;
+}
+.content-rep {
+    position: relative;
+    text-align: center;
+    background-color: white;
+    width: 80%;
+    /* border-radius: 10px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+.media-content {
+    width: 100%;
+    
 }

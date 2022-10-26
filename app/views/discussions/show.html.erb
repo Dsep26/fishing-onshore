@@ -1,7 +1,7 @@
-<div class="columns">
-  <div class="column is-8">
-    <h1 class="title is-2 has-text-grey discussion-title"><%= @discussion.title %></h1>
-    <h3 class="subtitle is-5 has-text-grey-lighter">by <%= @discussion.user.name %> </h3>
+<div class="columns-show">
+  <%# <div class="column is-8"> %>
+    <h1 class="title is-2 has-text-grey discussion-title"><%= @discussion.title.capitalize %></h1>
+    <h3 class="subtitle is-5 has-text-grey-lighter">by <%= @discussion.user.name.capitalize %> </h3>
     <div class="level">
       <div class="level-left"></div>
       <div class="level-right">
@@ -13,12 +13,12 @@
         <% end %>
       </div>
     </div>
-    <div class="content"><%= @discussion.content %></div>
+    <div class="discuss"><%= @discussion.content %></div>
 
     <h2 class="subtitle is-5 has-text-grey"><%= @discussion.replies.count %> Replies</h2>
 
     <div id="discussion-replies">
-      <%= render @discussion.replies %>
+      <%= render @discussion.replies, class:'rep' %>
     </div>
 
     <hr />
@@ -31,5 +31,5 @@
       <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
     <% end %>
 
-  </div>
+  <%# </div> %>
 </div>
