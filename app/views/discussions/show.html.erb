@@ -4,14 +4,14 @@
     <h3 class="subtitle is-5 has-text-grey-lighter">by <%= @discussion.user.name.capitalize %> </h3>
     <div class="level">
       <div class="level-left"></div>
-      <div class="level-right">
+      <%# <div class="level-right"> %>
         <% if  @discussion.user %>
         <div class="buttons">
             <%= link_to 'Edit Discussion', edit_discussion_path(@discussion), class:'button' %>
             <%= link_to 'Delete', discussion_path(@discussion), data: { turbo_method: :delete, turbo_confirm: "Delete discussion?" }, class:'button' %>
         </div>
         <% end %>
-      </div>
+      <%# </div> %>
     </div>
     <div class="discuss"><%= @discussion.content %></div>
 
@@ -23,7 +23,7 @@
 
     <hr />
 
-    <h3 class="subtitle is-3 has-text-grey">Leave a reply</h3>
+    <h3 class="subtitle-rep is-3 has-text-grey">Leave a reply</h3>
     <% if user_signed_in? %>
       <%= render 'replies/form' %>
     <% else %>
