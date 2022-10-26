@@ -1,8 +1,8 @@
 <div class="container-fishingspot">
 
-<h1><%= @fishspot.address %></h1>
+  <h1><%= @fishspot.address %></h1>
 
-<%# <div id='map' style='width: 400px; height: 300px;'></div>
+  <%# <div id='map' style='width: 400px; height: 300px;'></div>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW1lZW5haDE0NyIsImEiOiJjbDlmYjM5ZjEwNW0zM29yeG12cWFha2VvIn0.nCfUZJuzLLaP6wPxGuVgFw';
     const map = new mapboxgl.Map({
@@ -17,37 +17,57 @@
     });
   </script> %>
 
-  <div class="map", style="width: 100%; height: 55vh;"
+  <div class="map""
     data-controller="map"
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn btn-primary" %>
-  <%= link_to "Discussions",  fishing_spot_discussions_path(@fishingspot), class: "btn btn-primary" %>
-
-  <div class="box">
-    <h2 style="text-align:center;"><%= @fishspot.address %>'s Fishing Condition</h2>
-    <div class="weather-card">
-      <div class="condition">
-        <div class="img-icon">
-          <img src="<%= @icon %>" alt="Weather Condition" class="icon">
+  <div class="button-list">
+    <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn-fish" %>
+    <button type="button" class="btn-fish" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Weather
+    </button>
+    <%= link_to "Discussions",  fishing_spot_discussions_path(@fishingspot), class: "btn-fish" %>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div style = "background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);" class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel"><%= @fishspot.address %>'s Fishing Condition</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <p class="text-weather"><%= @condition %></p>
+        <div class="modal-body">
+          <div class="weather-card">
+            <div class="condition">
+              <div class="img-icon">
+                <img src="<%= @icon %>" alt="Weather Condition" class="icon">
+              </div>
+              <p class="text-condition-direction"><%= @condition %></p>
+            </div>
+            <div class="temperature">
+              <p class="text-temperature-humidity-speed"><%= @temperature %>&deg;C</p>
+              <i class="fa-solid fa-temperature-half fa-3x"></i>
+            </div>
+            <div class="humidity">
+              <p class="text-temperature-humidity-speed"><%= @humidity %> %</p>
+              <i class="fa-solid fa-droplet fa-3x"></i>
+            </div>
+            <div class="speed">
+              <p class="text-temperature-humidity-speed"><%= @windspeed %> kph</p>
+              <i class="fa-solid fa-wind fa-3x"></i>
+            </div>
+            <div class="direction">
+              <p class="text-condition-direction"><%= @winddirection %></p>
+              <i class="fa-regular fa-compass fa-3x"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-fish" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
-      <div class="temperature">
-        <i class="fa-solid fa-temperature-half fa-3x"></i>
-        <p class="text-weather"><%= @temperature %><%= @humidity %></p>
-      </div>
-      <div class="humidity">
-        <i class="fa-solid fa-droplet fa-3x"></i>
-        <p class="text-weather"><%= @humidity %></p>
-      </div>
-      <div class="wind">
-        <i class="fa-solid fa-wind fa-3x"></i>
-        <p class="text-weather">Speed: <%= @windspeed %> kph</p>
-        <i class="fa-regular fa-compass fa-3x"></i>
-        <p class="text-weather"><%= @winddirection %></p>
     </div>
   </div>
 </div>

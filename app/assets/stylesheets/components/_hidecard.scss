@@ -1,79 +1,106 @@
 h1 {
     margin: 0
-  }
-  .box {
-    height: 45vh;
-    width: 100%;
-    // overflow: hidden;
-    background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
-    // border-top-left-radius: 15px;
-    // border-top-right-radius: 15px;
-    opacity: 1;
-  }
+}
 
-  .weather-card {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-  }
+.map {
+  width: 100%;
+  height: 80vh;
+}
 
-  .condition, .temperature, .humidity, .wind {
-    width:120px;
-    height: 120px;
-    background-color:rgb(145, 158, 131);
-    padding: 0 auto;
-    margin: 0 auto;
-    border-radius: 15px;
-  }
+.button-list {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  height: 20vh;
+  background-color: white;
+  padding-top: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  gap:2px;
+}
+// .box {
+//   height: 45vh;
+//   width: 100%;
+//   // overflow: hidden;
+//   background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+//   // border-top-left-radius: 15px;
+//   // border-top-right-radius: 15px;
+//   opacity: 1;
+// }
 
-  .img-icon {
-    width: 100%;
-    height:75px;
-  }
+.weather-card {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding:1px;
+  gap:10px;
+}
 
-  .icon {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height:75px;
-  }
+.condition, .temperature, .humidity, .speed, .direction {
+  // display: flex;
+  width:115px;
+  height: 115px;
+  background-color:rgb(99, 101, 101);
+  padding: 0 auto;
+  margin: 0 auto;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
 
-  .temperature > .fa-solid {
-    color:red;
-    // display: block;
-    margin: 0 auto;
-    left:50%;
+.img-icon {
+  width: 100%;
+  height:60px;
+}
 
-  }
+.icon {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height:75px;
+}
 
-  .humidity >.fa-solid {
-    color: rgb(112, 154, 159);
-    display: block;
-    margin: 0 auto;
-  }
+.temperature > .fa-solid {
+  color:red;
+}
 
-  // .hid-box {
-  //   top: 100%;
-  //   position: relative;
-  //   transition: all .3s ease-out;
-  //   background: inherit;
-  //   height: 100%;
-  //   opacity: 100%;
-  // }
+.humidity >.fa-solid {
+  color: rgb(146, 227, 236);
+}
 
-  .box:hover > .hid-box{
-    top: 0;
-  }
+// .hid-box {
+//   top: 100%;
+//   position: relative;
+//   transition: all .3s ease-out;
+//   background: inherit;
+//   height: 100%;
+//   opacity: 100%;
+// }
 
-  h2 {
-    color: white;
-    font-size: 22px;
-  }
+// .box:hover > .hid-box{
+//   top: 0;
+// }
 
-  .text-weather {
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
+.modal-header > h2 {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.text-condition-direction {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  // align-self:flex-end;
+}
+
+.text-temperature-humidity-speed {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,33 @@
+.btn-fish {
+  -webkit-animation: glowing 1ms infinite;
+  text-align: center;
+  text-decoration: none;
+  width: 10rem;
+  height: 50px;
+  background-color: rgb(227, 201, 162);
+  color: black;
+  border: 3px solid #fff;
+  border-top-left-radius: 22px;
+  border-bottom-right-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    border-color: rgb(41, 126, 196);
+    -webkit-box-shadow: 0 0 20px #034675;
+  }
+
+  50% {
+    border-color: rgb(41, 126, 196);
+    -webkit-box-shadow: 0 0 20px #034675;
+  }
+
+  100% {
+    border-color: rgb(41, 126, 196);
+    -webkit-box-shadow: 0 0 20px #034675;
+  }
+}
