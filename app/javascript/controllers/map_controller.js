@@ -23,7 +23,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/satellite-v9',
 
     })
 
@@ -47,6 +47,9 @@ export default class extends Controller {
       console.log(geolocate)
       geolocate.trigger();
     })
+    this.map.addControl(
+      new mapboxgl.NavigationControl()
+    );
 
     // this.map.addControl(
     //   new MapboxDirections({
