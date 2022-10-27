@@ -30,8 +30,8 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
-    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    //   mapboxgl: mapboxgl }))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl }))
       const geolocate = new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true
@@ -42,14 +42,15 @@ export default class extends Controller {
         showUserHeading: true,
 
       })
-    this.map.addControl(geolocate);
-    this.map.on('load', () => {
-      console.log(geolocate)
-      geolocate.trigger();
-    })
-    this.map.addControl(
-      new mapboxgl.NavigationControl()
-    );
+      this.map.addControl(
+        new mapboxgl.NavigationControl()
+      );
+
+      // this.map.addControl(geolocate);
+    // this.map.on('load', () => {
+    //   console.log(geolocate)
+      // geolocate.trigger();
+    // })
 
     // this.map.addControl(
     //   new MapboxDirections({
