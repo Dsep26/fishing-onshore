@@ -105,14 +105,40 @@
 
 .fa-arrow-alt-circle-left {
   color: blue;
-  margin-bottom: 40px;
-  top: 0px;
-  position: fixed;
-  top: 766px;
-  right: 171px;;
+  // margin-bottom: 40px;
+  // top: 0px;
+  // position: fixed;
+  // top: 766px;
+  // right: 171px;
 
 }
 
 .btn-map > .fa-solid {
   color:  rgb(41, 126, 196);
+}
+
+.modal-footer {
+  justify-content: center;
+
+  button{
+    background: transparent;
+    border: none;
+
+    i {
+      font-size: 2.5rem;
+      color: white;
+    }
+  }
+}
+
+
+.button-back{
+  width: 100%;
+  position: fixed;
+  // bottom: 100vh;
+  top: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }

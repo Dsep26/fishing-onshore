@@ -51,7 +51,6 @@
       <div style = "background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);" class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title" id="exampleModalLabel"><%= @fishspot.address %>'s Fishing Condition</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="weather-card">
@@ -86,9 +85,11 @@
               <%# <img src="../../assets/images/compass.gif" alt="Wind Direction" class="icon-gif"> %>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-fish" data-bs-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="button" data-bs-dismiss="modal">
+              <i class="fa-solid fa-circle-left"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
