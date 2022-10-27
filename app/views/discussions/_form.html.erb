@@ -2,21 +2,12 @@
   <%= f.error_notification %>
 
   <div class="field">
-    <div class="control">
+    
       <%= f.input :title, required: true, input_html: { class: 'input' }, wrapper: false, label_html: { class: "label" } %>
-    </div>
-  </div>
 
-  <div class="field">
-    <div class="control">
       <%= f.input :content, required: true, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: "label" } %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="control-dis">
+   
       <%= f.button :submit, class:"button-dis is-info" %>
-    </div>
   </div>
 
 <% end %>

@@ -5,7 +5,14 @@ class FishingSpotsController < ApplicationController
   before_action :set_spot, only: [:show, :photo]
 
   def index
-    @fishingspots = FishingSpot.order(fishing_activity: :desc)
+    # @fishingspots = FishingSpot.order(fishing_activity: :desc)
+    if params[:query].present?
+      @fishingspots = FishingSpot.where("address ILIKE ?", "%#{params[:query]}%")
+    else 
+      @fishingspots = FishingSpot.order(fishing_activity: :desc)
+    end
+
+    # @fishingspots = FishingSpot.order(fishing_activity: :desc)
   end
 
   def new
