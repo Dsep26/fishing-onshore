@@ -3,31 +3,24 @@
     <h3 class="title is-5">Spot Discussion</h3>
     <div class="discussions">
       <% @discussions.each do |discussion| %>
-        <div class="columns-message bb-not-last pv10">
-          <div class="column-user is-1">
-            <%= discussion.user.name %>
-          </div>
+        <div class="columns-message bb-not-last pv10">         
           <div class="column is-8">
             <%= link_to discussion_path(discussion) do %>
               <h3 class="title-dis is-5"><%= discussion.title.capitalize %></h3>
             <% end %>
-            <div class="content-reply">
-              <%= discussion.content %>
-              <p><em><small>Posted <%= time_ago_in_words(discussion.created_at) %> ago in
+             <h2 class="con-text"> <%= discussion.content.capitalize %></h2>
+              <p class="post"><em><strong class="column-user"><%= discussion.user.name.capitalize %></strong><small>Posted <%= time_ago_in_words(discussion.created_at) %> ago in
                 by <%= discussion.user.name %>
                 </small>
                 </em>
               </p>
-            </div>
+              <% if discussion.user == current_user %>
+              <%# <%= link_to 'Edit', edit_discussion_path(discussion), class:'button' %> 
+              <%= link_to fishing_spot_discussions_path,  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button-disc" do %>
+                <i class="fa-solid fa-trash-can"></i> 
+              <% end %>  
           </div>
-
-          <% if discussion.user == current_user %>
-          <div class="column has-text-right">
-            <%# <%= link_to 'Edit', edit_discussion_path(discussion), class:'button' %> 
-            <%= link_to 'Delete', fishing_spot_discussions_path,  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button-disc" %>
-          </div>
-          <% end %>
-
+        <% end %>
         </div>
       <% end %>
     </div>

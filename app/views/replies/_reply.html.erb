@@ -1,21 +1,20 @@
 <div class="box">
   <article class="media">
     <div class="media-left">
-      <figure class="image is-48x48">
-        <%= reply.user.name %>
-      </figure>
+        <%= reply.user.name.capitalize %>
     </div>
     <div class="media-content">
       <div class="content-rep">
-        <p>
-          <strong><%= reply.user.name %></strong> <small><%= time_ago_in_words(reply.created_at) %></small>
-          <br/>
+        <p class="rep-con">
           <%= reply.content %>
-        </p>
+        </p>  
+          <br/>
+         <p class="time"> <strong><%= reply.user.name.capitalize %></strong> <small><%= time_ago_in_words(reply.created_at) %></small> </p>
+        
         <a class="level-item">
             <%= link_to [reply.discussion, reply],
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure ?" } do %>
-            <span class="icon is-small"><i class="fa-duotone fa-dumpster"></i></span>
+              <i class="fa-solid fa-trash-can"></i>
             <% end %>
           </a>
       </div>
