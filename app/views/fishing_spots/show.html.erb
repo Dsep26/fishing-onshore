@@ -17,23 +17,31 @@
     });
   </script> %>
 
-  <div class="map""
+  <div class="map"
     data-controller="map"
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
   <div class="button-list">
-    <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn-spot" %>
-    <button type="button" class="btn-weather" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Weather
-    </button>
-    <%= link_to "Discussions",  fishing_spot_discussions_path(@fishingspot), class: "btn-discussion" %>
+      <div class="btn-map">
+        <%= link_to fishing_spot_hints_path(@fishingspot) do %>
+          <i class="fa-solid fa-toolbox"></i>
+        <% end %>
+      </div>
+      <button type="button" class="btn-map" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-cloud-sun"></i>
+      </button>
+    <div class="btn-map" >
+      <%= link_to fishing_spot_discussions_path(@fishingspot) do %>
+         <i class="fab fa-rocketchat"></i>
+      <% end %>
+    </div>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div style = "background: linear-gradient(60deg, #3f95f1 0%, #a2ebf5 100%);" class="modal-content">
+      <div style = "background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);" class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title" id="exampleModalLabel"><%= @fishspot.address %>'s Fishing Condition</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -47,27 +55,27 @@
               <p class="text-condition-direction"><%= @condition %></p>
             </div>
             <div class="temperature">
-              <%= image_tag "celsius.gif", class:"icon-gif" %>
               <p class="text-temperature-humidity-speed"><%= @temperature %></p>
+              <%= image_tag "celsius.gif", class:"icon-gif" %>
               <%# <img src="../../assets/images/celsius.gif" alt="Temperature" class="icon-gif"> %>
               <%# <i class="fa-solid fa-temperature-half fa-3x"></i> %>
             </div>
             <div class="humidity">
-              <%= image_tag "water.gif", class:"icon-gif" %>
               <p class="text-temperature-humidity-speed"><%= @humidity %> %</p>
+              <%= image_tag "water.gif", class:"icon-gif" %>
               <%# <i class="fa-solid fa-droplet fa-3x"></i> %>
               <%# <img src="../../assets/images/drop.gif" alt="Humidity" class="icon-gif"> %>
             </div>
             <div class="speed">
-              <%= image_tag "wind.gif", class:"icon-gif" %>
               <p class="text-temperature-humidity-speed"><%= @windspeed %> kph</p>
+              <%= image_tag "wind.gif", class:"icon-gif" %>
               <%# <i class="fa-solid fa-wind fa-3x"></i> %>
               <%# <img src="../../assets/images/wind.gif" alt="Wind Speed" class="icon-gif"> %>
             </div>
             <div class="direction">
-              <%= image_tag "compass.gif", class:"icon-gif" %>
               <p class="text-condition-direction"><%= @winddirection %></p>
               <%# <i class="fa-regular fa-compass fa-3x"></i> %>
+              <%= image_tag "compass.gif", class:"icon-gif" %>
               <%# <img src="../../assets/images/compass.gif" alt="Wind Direction" class="icon-gif"> %>
             </div>
           </div>
