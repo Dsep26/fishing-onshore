@@ -46,6 +46,10 @@
   font-weight: bold;
   padding: 10px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
 }
 
 .btn-discussion {
@@ -101,4 +105,9 @@
 
 .fa-arrow-alt-circle-left{
   color:white;
+  margin-bottom: 20px;
+}
+
+.btn-map > .fa-solid {
+  color:  rgb(41, 126, 196);
 }
