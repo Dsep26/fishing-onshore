@@ -25,6 +25,11 @@
 
   <div class="button-list">
       <div class="btn-map">
+        <%= link_to fishing_spots_path do %>
+          <i class="fa-solid fa-rectangle-list"></i>
+        <% end %>
+      </div>
+      <div class="btn-map">
         <%= link_to fishing_spot_hints_path(@fishingspot) do %>
           <i class="fa-solid fa-toolbox"></i>
         <% end %>
