@@ -103,6 +103,20 @@
   }
 }
 
+
+.btn-fishs {
+    background-color: #e3c9a2;
+    width: 52px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    -webkit-animation: glowing 1ms infinite;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border: 3px solid #fff;
+    padding: 10px;
+    margin: 0 auto;
+
 .fa-arrow-alt-circle-left {
   color: blue;
   // margin-bottom: 40px;
@@ -146,5 +160,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 
 }

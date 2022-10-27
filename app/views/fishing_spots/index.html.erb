@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Fishing Spots</h1>
+  <h1 class="title-fish">Fishing Spots</h1>
   <div class="search">
   <%= form_with url: fishing_spots_path, method: :get, class: "d-flex search-field" do %>
     <%= text_field_tag :query,
@@ -7,9 +7,10 @@
     class: "form-control",
     placeholder: "Find Your Location"
     %>
-    <%# <%= submit_tag "Search", class:"fas fa-search" %>
-    <%= button_tag(type: "submit", class: "fas fa-search") do %>
-    <% end %>
+
+    <%= button_tag(type: "submit", class: "btn-fishs btn-default") do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>    
   <% end %>
 </div>
 
