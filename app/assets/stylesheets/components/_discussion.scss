@@ -2,7 +2,7 @@
 // index
  .columns {
     background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
-    height: 92.2vh;
+    height: 100vh;
     // padding-bottom: 198px;
 }
 
@@ -100,19 +100,44 @@
 }
 .control-dis {
     background-color:grey;
-    margin-left: 20px;
+    margin-left: 39px;
     border-radius: 10px;
     padding-left: 1px;
     text-align: center;
     margin-top: 10px;
     padding-top: 1px; 
+    margin-right: 84px;
 }
 .title-dis {
     color: black;
     text-decoration: none;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 .column-user {
     padding-left: 10px;
     color: yellow;
+}.column-contain {
+    position: relative;
+    // height: 70vh;
+}
+.field {
+position: absolute;
+width: 100%;
+margin-top: 185px;
+
+}
+.dis-content {
+
+}
+.columns-message {
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.button-disc {
+    color: black;
+}
+.field-reply {
+    margin-top: 20px;
 }

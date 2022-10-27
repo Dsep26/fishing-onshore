@@ -83,4 +83,5 @@ gem "cloudinary"
 gem "browser"
 gem "maxminddb"
 gem "leaflet-rails"
+gem "pg_search"
 

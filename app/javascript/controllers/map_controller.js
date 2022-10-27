@@ -48,12 +48,12 @@ export default class extends Controller {
       geolocate.trigger();
     })
 
-    this.map.addControl(
-      new MapboxDirections({
-      accessToken: mapboxgl.accessToken
-      }),
-      'top-left'
-      );
+    // this.map.addControl(
+    //   new MapboxDirections({
+    //   accessToken: mapboxgl.accessToken
+    //   }),
+    //   'top-left'
+    //   );
       this.map.scrollZoom.enable();
       navigator.geolocation.getCurrentPosition(position => {
         const { latitude, longitude } = position.coords;
