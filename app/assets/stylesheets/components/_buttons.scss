@@ -39,7 +39,7 @@
   width: 75px;
   height: 75px;
   border-radius: 15px;
-  background-color: rgb(227, 201, 162);
+  background-color: white;
   color: black;
   border: 3px solid #fff;
   font-size: 1.1rem;
@@ -114,7 +114,13 @@
 }
 
 .btn-map > .fa-solid {
-  color:  rgb(41, 126, 196);
+  color:#0D6EFD;
+}
+
+.modal-footer > .fas {
+  margin: 0 auto;
+  border: none;
+  background-color: transparent;
 }
 
 .modal-footer {
