@@ -17,18 +17,33 @@
     });
   </script> %>
 
-  <div class="map""
+  <div class="map"
     data-controller="map"
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
   <div class="button-list">
-    <%= link_to "Spot Info", fishing_spot_hints_path(@fishingspot), class: "btn-spot" %>
-    <button type="button" class="btn-weather" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Weather
-    </button>
-    <%= link_to "Discussions",  fishing_spot_discussions_path(@fishingspot), class: "btn-discussion" %>
+      <div class="btn-map">
+        <%= link_to fishing_spots_path do %>
+          <i class="fa-solid fa-rectangle-list"></i>
+        <% end %>
+      </div>
+      <div class="btn-map">
+        <%= link_to fishing_spot_hints_path(@fishingspot) do %>
+          <i class="fa-solid fa-toolbox"></i>
+        <% end %>
+      </div>
+      <div class="btn-map">
+        <button type="button" class="btn-map" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="fa-solid fa-cloud-sun"></i>
+        </button>
+      </div>
+    <div class="btn-map" >
+      <%= link_to fishing_spot_discussions_path(@fishingspot) do %>
+         <i class="fab fa-rocketchat"></i>
+      <% end %>
+    </div>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -36,7 +51,6 @@
       <div style = "background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);" class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title" id="exampleModalLabel"><%= @fishspot.address %>'s Fishing Condition</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="weather-card">
@@ -71,9 +85,11 @@
               <%# <img src="../../assets/images/compass.gif" alt="Wind Direction" class="icon-gif"> %>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-fish" data-bs-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="button" data-bs-dismiss="modal">
+              <i class="fa-solid fa-circle-left"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>

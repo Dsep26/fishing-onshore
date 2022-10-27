@@ -8,5 +8,17 @@
         <p><%= hint.description %></p>
     </div>
   <% end %>
-  <%= link_to "Back", :back, class: "btn btn-primary" %>
+
+<%# <div class= "button-hint"> %>
+  <%# <%= link_to fishing_spots_path do  %>
+    <%# <i class="fas fa-arrow-alt-circle-left fa-2x"></i>
+  <% end %>
+  <div class="button-back">
+   <%= link_to :back do %>
+      <%# <i class="btn btn-primary"></i> %>
+
+        <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
+   <% end %>
+  </div>
+  <%# </div> %>
 </div>
