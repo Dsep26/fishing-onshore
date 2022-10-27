@@ -10,7 +10,6 @@
             <% end %>
              <h2 class="con-text"> <%= discussion.content.capitalize %></h2>
               <p class="post"><em><strong class="column-user"><%= discussion.user.name.capitalize %></strong><small>Posted <%= time_ago_in_words(discussion.created_at) %> ago in
-                by <%= discussion.user.name %>
                 </small>
                 </em>
               </p>
