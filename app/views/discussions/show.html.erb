@@ -1,5 +1,10 @@
 <div class="columns-show">
   <h3 class="title-reply"><%= @discussion.title.capitalize %></h3>
+  <%= link_to :back do %>
+      <%# <i class="btn btn-primary"></i> %>
+
+        <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
+   <% end %>
   <%# <div class="column is-8"> %>
     <%# <h1 class="title is-2 has-text-grey discussion-title"><%= @discussion.title.capitalize</h1> %>
     <h3 class="subtitle-rep">by <%= @discussion.user.name.capitalize %> </h3>

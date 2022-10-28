@@ -1,6 +1,11 @@
 <div class="dis-content">
   <div class="column-contain is-8">
     <h3 class="title is-5">Spot Discussion</h3>
+    <%= link_to :back do %>
+      <%# <i class="btn btn-primary"></i> %>
+
+        <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
+   <% end %>
     <div class="discussions">
       <% @discussions.each do |discussion| %>
         <div class="columns-message bb-not-last pv10">         
