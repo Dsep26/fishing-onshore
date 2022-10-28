@@ -1,8 +1,9 @@
 <div class="dis-content">
   <div class="column-contain is-8">
     <h3 class="title is-5">Spot Discussion</h3>
-    <%= link_to :back do %>
-      <%# <i class="btn btn-primary"></i> %>
+
+    <%= link_to  fishing_spot_path(@fishing_spot) do %>
+
       <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
     <% end %>
     <div class="discussions">
@@ -19,9 +20,9 @@
               </p>
               <% if discussion.user == current_user %>
               <%# <%= link_to 'Edit', edit_discussion_path(discussion), class:'button' %>
-              <%= link_to fishing_spot_discussions_path,  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button-disc" do %>
-                <i class="fa-solid fa-trash-can"></i>
-              <% end %>
+              <%# <%= link_to fishing_spot_discussions_path,  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button-disc" do %>
+                <%# <i class="fa-solid fa-trash-can"></i> %>
+              <%# <% end %> 
           </div>
         <% end %>
         </div>
