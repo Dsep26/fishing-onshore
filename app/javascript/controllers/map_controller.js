@@ -66,11 +66,11 @@ export default class extends Controller {
         console.log(directions)
         if (this.map.loaded()) {
           directions.setOrigin([longitude, latitude]);
-          directions.setDestination([this.markerValue[0].lng, this.markerValue[0].lat]);
+          directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
         } else {
           this.map.on("load", () => {
             directions.setOrigin([longitude, latitude]);
-            directions.setDestination([this.markerValue[0].lng, this.markerValue[0].lat]);
+            directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
           })
         }
        })
