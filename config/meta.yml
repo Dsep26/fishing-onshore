@@ -1,0 +1,5 @@
+meta_product_name: "Fishing OnShore"
+meta_title: "Fishing OnShore - Get Your Fishing Spot"
+meta_description: "Fishing Onshore is an app to find the best fishing location nearby."
+meta_image: "fish-logo.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
