@@ -1,6 +1,6 @@
 <div class="container-fishingspot">
 
-  <h1><%= @fishspot.address %></h1>
+  <h1 class = "title-fish"><%= @fishspot.address %></h1>
 
   <%# <div id='map' style='width: 400px; height: 300px;'></div>
   <script>
@@ -50,7 +50,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div style = "background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);" class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLabel"><%= @fishspot.address %>'s Fishing Condition</h2>
+          <h2 class="modal-title title-fish-h2" id="exampleModalLabel"><%= @fishspot.address %>'s Fishing Condition</h2>
         </div>
         <div class="modal-body">
           <div class="weather-card">
